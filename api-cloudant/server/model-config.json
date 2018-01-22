@@ -17,22 +17,22 @@
     "dataSource": "db"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "cloudant-access_tokens",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "cloudant-acl",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "cloudant-role_mappings",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "cloudant-roles",
     "public": false
   },
   "Song": {
@@ -41,6 +41,10 @@
   },
   "Feed": {
     "dataSource": "cloudant-feeds",
+    "public": true
+  },
+  "Client": {
+    "dataSource": "cloudant-clients",
     "public": true
   }
 }

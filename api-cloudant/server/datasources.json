@@ -26,5 +26,45 @@
     "password": "0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454",
     "name": "cloudant-feeds",
     "connector": "cloudant"
+  },
+  "cloudant-clients": {
+    "url": "https://cbdc4912-0df2-47fb-840f-5de13348dace-bluemix:0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454@cbdc4912-0df2-47fb-840f-5de13348dace-bluemix.cloudant.com",
+    "database": "clients",
+    "username": "cbdc4912-0df2-47fb-840f-5de13348dace-bluemix",
+    "password": "0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454",
+    "name": "cloudant-clients",
+    "connector": "cloudant"
+  },
+  "cloudant-access_tokens": {
+    "url": "https://cbdc4912-0df2-47fb-840f-5de13348dace-bluemix:0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454@cbdc4912-0df2-47fb-840f-5de13348dace-bluemix.cloudant.com",
+    "database": "access-tokens",
+    "username": "cbdc4912-0df2-47fb-840f-5de13348dace-bluemix",
+    "password": "0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454",
+    "name": "cloudant-access_tokens",
+    "connector": "cloudant"
+  },
+  "cloudant-acl": {
+    "url": "https://cbdc4912-0df2-47fb-840f-5de13348dace-bluemix:0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454@cbdc4912-0df2-47fb-840f-5de13348dace-bluemix.cloudant.com",
+    "database": "acl",
+    "username": "cbdc4912-0df2-47fb-840f-5de13348dace-bluemix",
+    "password": "0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454",
+    "name": "cloudant-acl",
+    "connector": "cloudant"
+  },
+  "cloudant-roles": {
+    "url": "https://cbdc4912-0df2-47fb-840f-5de13348dace-bluemix:0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454@cbdc4912-0df2-47fb-840f-5de13348dace-bluemix.cloudant.com",
+    "database": "roles",
+    "username": "cbdc4912-0df2-47fb-840f-5de13348dace-bluemix",
+    "password": "0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454",
+    "name": "cloudant-roles",
+    "connector": "cloudant"
+  },
+  "cloudant-role_mappings": {
+    "url": "https://cbdc4912-0df2-47fb-840f-5de13348dace-bluemix:0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454@cbdc4912-0df2-47fb-840f-5de13348dace-bluemix.cloudant.com",
+    "database": "role-mappings",
+    "username": "cbdc4912-0df2-47fb-840f-5de13348dace-bluemix",
+    "password": "0e46070137e3f41d04a1af732645abbff35cb75239bb981e7e1c96f082f41454",
+    "name": "cloudant-role_mappings",
+    "connector": "cloudant"
   }
 }
