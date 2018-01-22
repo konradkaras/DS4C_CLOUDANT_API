@@ -10,10 +10,31 @@
     "date": {
       "type": "string",
       "required": false
+    },
+    "songId": {
+      "type": "string",
+      "required": false,
+      "description": "foreign key for Song relation"
+    },
+    "clientId": {
+      "type": "string",
+      "required": false,
+      "description": "foreign key for Client relation"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "client": {
+      "type": "belongsTo",
+      "model": "Client",
+      "foreignKey": "clientId"
+    },
+    "song": {
+      "type": "belongsTo",
+      "model": "Song",
+      "foreignKey": "songId"
+    }
+  },
   "acls": [],
   "methods": {}
 }

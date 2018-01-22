@@ -621,6 +621,252 @@ paths:
         '204':
           description: Request was successful
       deprecated: false
+  '/Songs/{id}/clients/{fk}':
+    get:
+      tags:
+        - Song
+      summary: Find a related item by id for clients.
+      operationId: Song.prototype.__findById__clients
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clients
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Client'
+      deprecated: false
+    delete:
+      tags:
+        - Song
+      summary: Delete a related item by id for clients.
+      operationId: Song.prototype.__destroyById__clients
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clients
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - Song
+      summary: Update a related item by id for clients.
+      operationId: Song.prototype.__updateById__clients
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clients
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Client'
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Client'
+      deprecated: false
+  '/Songs/{id}/clients/rel/{fk}':
+    put:
+      tags:
+        - Song
+      summary: Add a related item by id for clients.
+      operationId: Song.prototype.__link__clients
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clients
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Feed'
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Feed'
+      deprecated: false
+    delete:
+      tags:
+        - Song
+      summary: Remove the clients relation to an item by id.
+      operationId: Song.prototype.__unlink__clients
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clients
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - Song
+      summary: Check the existence of clients relation to an item by id.
+      operationId: Song.prototype.__exists__clients
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for clients
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
+  '/Songs/{id}/clients':
+    get:
+      tags:
+        - Song
+      summary: Queries clients of Song.
+      operationId: Song.prototype.__get__clients
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Client'
+      deprecated: false
+    post:
+      tags:
+        - Song
+      summary: Creates a new instance in clients of this model.
+      operationId: Song.prototype.__create__clients
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Client'
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Client'
+      deprecated: false
+    delete:
+      tags:
+        - Song
+      summary: Deletes all clients of this model.
+      operationId: Song.prototype.__delete__clients
+      parameters:
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Songs/{id}/clients/count':
+    get:
+      tags:
+        - Song
+      summary: Counts clients of Song.
+      operationId: Song.prototype.__count__clients
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Song id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /Songs:
     post:
       tags:
@@ -980,6 +1226,52 @@ paths:
               count:
                 type: number
                 format: double
+      deprecated: false
+  '/Feeds/{id}/song':
+    get:
+      tags:
+        - Feed
+      summary: Fetches belongsTo relation song.
+      operationId: Feed.prototype.__get__song
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: Feed id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Song'
+      deprecated: false
+  '/Feeds/{id}/client':
+    get:
+      tags:
+        - Feed
+      summary: Fetches belongsTo relation client.
+      operationId: Feed.prototype.__get__client
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: Feed id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Client'
       deprecated: false
   /Feeds:
     post:
@@ -1417,6 +1709,158 @@ paths:
           schema:
             $ref: '#/definitions/AccessToken'
       deprecated: false
+  '/Clients/{id}/songs/{fk}':
+    get:
+      tags:
+        - Client
+      summary: Find a related item by id for songs.
+      operationId: Client.prototype.__findById__songs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for songs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Song'
+      deprecated: false
+    delete:
+      tags:
+        - Client
+      summary: Delete a related item by id for songs.
+      operationId: Client.prototype.__destroyById__songs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for songs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - Client
+      summary: Update a related item by id for songs.
+      operationId: Client.prototype.__updateById__songs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for songs
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Song'
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Song'
+      deprecated: false
+  '/Clients/{id}/songs/rel/{fk}':
+    put:
+      tags:
+        - Client
+      summary: Add a related item by id for songs.
+      operationId: Client.prototype.__link__songs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for songs
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Feed'
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Feed'
+      deprecated: false
+    delete:
+      tags:
+        - Client
+      summary: Remove the songs relation to an item by id.
+      operationId: Client.prototype.__unlink__songs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for songs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    head:
+      tags:
+        - Client
+      summary: Check the existence of songs relation to an item by id.
+      operationId: Client.prototype.__exists__songs
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for songs
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: boolean
+      deprecated: false
   '/Clients/{id}/accessTokens':
     get:
       tags:
@@ -1488,6 +1932,100 @@ paths:
         - Client
       summary: Counts accessTokens of Client.
       operationId: Client.prototype.__count__accessTokens
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/Clients/{id}/songs':
+    get:
+      tags:
+        - Client
+      summary: Queries songs of Client.
+      operationId: Client.prototype.__get__songs
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Song'
+      deprecated: false
+    post:
+      tags:
+        - Client
+      summary: Creates a new instance in songs of this model.
+      operationId: Client.prototype.__create__songs
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Song'
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Song'
+      deprecated: false
+    delete:
+      tags:
+        - Client
+      summary: Deletes all songs of this model.
+      operationId: Client.prototype.__delete__songs
+      parameters:
+        - name: id
+          in: path
+          description: Client id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/Clients/{id}/songs/count':
+    get:
+      tags:
+        - Client
+      summary: Counts songs of Client.
+      operationId: Client.prototype.__count__songs
       parameters:
         - name: where
           in: query
@@ -2011,20 +2549,6 @@ definitions:
     required:
       - email
     additionalProperties: false
-  Song:
-    properties:
-      name:
-        type: string
-      id:
-        type: string
-    additionalProperties: false
-  Feed:
-    properties:
-      date:
-        type: string
-      id:
-        type: string
-    additionalProperties: false
   Client:
     properties:
       realm:
@@ -2051,6 +2575,26 @@ definitions:
         type: string
     required:
       - email
+    additionalProperties: false
+  Feed:
+    properties:
+      date:
+        type: string
+      songId:
+        description: foreign key for Song relation
+        type: string
+      clientId:
+        description: foreign key for Client relation
+        type: string
+      id:
+        type: string
+    additionalProperties: false
+  Song:
+    properties:
+      name:
+        type: string
+      id:
+        type: string
     additionalProperties: false
 basePath: /api
 swagger: '2.0'

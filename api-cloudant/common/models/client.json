@@ -8,7 +8,14 @@
   },
   "properties": {},
   "validations": [],
-  "relations": {},
+  "relations": {
+    "songs": {
+      "type": "hasMany",
+      "model": "Song",
+      "foreignKey": "clientId",
+      "through": "Feed"
+    }
+  },
   "acls": [],
   "methods": {}
 }
