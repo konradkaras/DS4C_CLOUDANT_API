@@ -36,7 +36,7 @@ catalog:
     firstName: ''
     lastName: ''
     status: ACTIVE
-    lastLoginTime: '2018-01-20T11:45:08.639+0000'
+    lastLoginTime: '2018-01-20T16:59:03.281+0000'
     url: 'https://us.apiconnect.ibmcloud.com/v1/users/5a574eb70cf27bf1440526fc'
   apiCenter: false
   portalType: BASIC
@@ -78,27 +78,11 @@ space:
 app:
   metadata:
     guid: 63eefea2-6629-4aa7-9389-c69d2678db84
+    url: /v2/apps/63eefea2-6629-4aa7-9389-c69d2678db84
+    created_at: '2018-01-20T12:16:54Z'
+    updated_at: '2018-01-21T23:20:23Z'
   entity:
-    guid: 63eefea2-6629-4aa7-9389-c69d2678db84
     name: cloudant-api
-    routes:
-      - guid: 0e8df9b3-c631-4e09-8fdf-363317da1711
-        host: apiconnect-f388fb2d-432d-429d-9b93-4947010bc7c0
-        port: null
-        path: ''
-        domain:
-          guid: b7c54fbb-d292-4aff-a48c-efb86ba3a93a
-          name: tltranstudentvunl-dev.apic.mybluemix.net
-    running_instances: 0
-    services: []
-    available_domains:
-      - guid: b7c54fbb-d292-4aff-a48c-efb86ba3a93a
-        name: tltranstudentvunl-dev.apic.mybluemix.net
-        owning_organization_guid: 379c4ff1-f1ef-4aba-a954-b211ca595fdf
-      - guid: f4b90d7e-2cd3-4d30-b200-f28bbaf6be20
-        name: mybluemix.net
-        router_group_guid: null
-        router_group_type: null
     production: false
     space_guid: 2d230889-cfa1-48be-8927-1e22210a6903
     stack_guid: ac91d31a-86a3-453b-babf-8d49c9d763fc
@@ -109,13 +93,13 @@ app:
     memory: 256
     instances: 1
     disk_quota: 1024
-    state: STOPPED
-    version: 52fb9d3a-27ef-4055-baf4-9362e7ed1572
+    state: STARTED
+    version: a0456fa1-e411-46aa-a4a4-2fbaa50e78bd
     command: null
     console: true
     debug: null
-    staging_task_id: 311b5360-46cd-4ba6-a1a3-07156ab1e32c
-    package_state: PENDING
+    staging_task_id: d4b0522f-17ca-41f4-92ad-acdc5d327b22
+    package_state: STAGED
     health_check_type: port
     health_check_timeout: null
     health_check_http_endpoint: null
@@ -123,22 +107,19 @@ app:
     staging_failed_description: null
     diego: true
     docker_image: null
+    docker_credentials:
+      username: null
+      password: null
     package_updated_at: '2018-01-21T23:19:54Z'
     detected_start_command: ./vendor/initial_startup.rb
     enable_ssh: true
-    ports: null
-id: bb7b01d3-1615-41c3-925c-5397e8cd2e2a
+    ports:
+      - 8080
+    space_url: /v2/spaces/2d230889-cfa1-48be-8927-1e22210a6903
+    stack_url: /v2/stacks/ac91d31a-86a3-453b-babf-8d49c9d763fc
+    routes_url: /v2/apps/63eefea2-6629-4aa7-9389-c69d2678db84/routes
+    events_url: /v2/apps/63eefea2-6629-4aa7-9389-c69d2678db84/events
+    service_bindings_url: /v2/apps/63eefea2-6629-4aa7-9389-c69d2678db84/service_bindings
+    route_mappings_url: /v2/apps/63eefea2-6629-4aa7-9389-c69d2678db84/route_mappings
+id: b6f9fdd7-6477-4135-a64c-9034d8322fd9
 target: 1.0.0
-versionOptions:
-  inplaceUpdate: true
-publishApp: true
-publishProducts: true
-workspaceDir:
-  name: api-cloudant
-  path: /Users/konradkaras/Documents/GitHub/api-cloudant/api-cloudant
-  id: 14
-  templateName: api-server
-  version: 2.x
-  displayName: api-cloudant
-  type: project
-  projectType: loopback
