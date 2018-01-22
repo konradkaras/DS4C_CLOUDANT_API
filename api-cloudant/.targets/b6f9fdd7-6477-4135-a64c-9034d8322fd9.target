@@ -110,11 +110,11 @@ app:
     instances: 1
     disk_quota: 1024
     state: STOPPED
-    version: c64d9e13-4ae2-41f1-b28a-0fc7c4c315d8
+    version: f5d46d8b-e38c-4710-b51c-21fb78894c18
     command: null
     console: true
     debug: null
-    staging_task_id: 43d56d28-9a2b-411c-8045-efdd44bc77eb
+    staging_task_id: 70c7b871-a529-4e5f-b399-5d170c2137e8
     package_state: PENDING
     health_check_type: port
     health_check_timeout: null
@@ -123,7 +123,7 @@ app:
     staging_failed_description: null
     diego: true
     docker_image: null
-    package_updated_at: '2018-01-22T16:57:04Z'
+    package_updated_at: '2018-01-22T17:06:46Z'
     detected_start_command: ./vendor/initial_startup.rb
     enable_ssh: true
     ports: null
@@ -134,9 +134,4 @@ versionOptions:
 publishApp: true
 publishProducts: true
 workspaceDir:
-  name: api-cloudant
   path: /Users/konradkaras/Documents/GitHub/DS4C_CLOUDANT_API/api-cloudant
-  id: 19
-  displayName: api-cloudant
-  type: project
-  projectType: loopback
