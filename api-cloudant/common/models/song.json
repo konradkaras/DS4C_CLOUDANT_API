@@ -7,9 +7,25 @@
     "validateUpsert": true
   },
   "properties": {
-    "name": {
+    "title": {
       "type": "string",
-      "required": false
+      "required": false,
+      "description": "Title of song"
+    },
+    "artist": {
+      "type": "string",
+      "required": false,
+      "description": "Artist that is the author of the song"
+    },
+    "personalities": {
+      "type": "object",
+      "required": false,
+      "description": "Object representing personalities retrieved from Watson Personality Insight"
+    },
+    "tones": {
+      "type": "object",
+      "required": false,
+      "description": "Object representing tones retrieved from Watson Tone Analyser"
     }
   },
   "validations": [],

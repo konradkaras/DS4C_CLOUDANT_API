@@ -7,19 +7,24 @@
     "validateUpsert": true
   },
   "properties": {
-    "date": {
+    "clientId": {
       "type": "string",
-      "required": false
+      "required": true,
+      "description": "Represents foreign key for Client relation",
+      "isArray": false
+    },
+    "date": {
+      "type": "date",
+      "required": false,
+      "description": "Timestamp of feed creation"
     },
     "songId": {
       "type": "string",
-      "required": false,
-      "description": "foreign key for Song relation"
-    },
-    "clientId": {
-      "type": "string",
-      "required": false,
-      "description": "foreign key for Client relation"
+      "id": false,
+      "required": true,
+      "index": false,
+      "description": "Represents foreign key for Song relation",
+      "isArray": false
     }
   },
   "validations": [],

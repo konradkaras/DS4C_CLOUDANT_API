@@ -2662,21 +2662,38 @@ definitions:
     additionalProperties: false
   Feed:
     properties:
-      date:
-        type: string
-      songId:
-        description: foreign key for Song relation
-        type: string
       clientId:
-        description: foreign key for Client relation
+        description: Represents foreign key for Client relation
+        type: string
+      date:
+        description: Timestamp of feed creation
+        type: string
+        format: date-time
+      songId:
+        description: Represents foreign key for Song relation
         type: string
       id:
         type: string
+    required:
+      - clientId
+      - songId
     additionalProperties: false
   Song:
     properties:
-      name:
+      title:
+        description: Title of song
         type: string
+      artist:
+        description: Artist that is the author of the song
+        type: string
+      personalities:
+        description: >-
+          Object representing personalities retrieved from Watson Personality
+          Insight
+        type: object
+      tones:
+        description: Object representing tones retrieved from Watson Tone Analyser
+        type: object
       id:
         type: string
     additionalProperties: false
